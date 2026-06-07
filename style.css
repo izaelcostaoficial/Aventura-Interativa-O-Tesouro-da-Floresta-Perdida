@@ -1,7 +1,6 @@
 /* CONFIGURAÇÃO DO FUNDO DA TELA INTEIRA */
 body {
    background-color: #0b0f0b;
-   /* Cria um fundo degradê sutil simulando a névoa da floresta */
    background: radial-gradient(circle, #163616 0%, #080f08 100%);
    color: white;
    font-family: "Bai Jamjuree", sans-serif;
@@ -10,28 +9,27 @@ body {
    align-items: center; 
    height: 100vh; 
    margin: 0;
-   padding: 10px;
+   padding: 15px;
    box-sizing: border-box;
-   overflow: hidden; /* Força tudo a ficar preso na tela, sem rolar */
+   overflow: hidden; /* Força tudo a ficar preso na tela, sem criar barras de rolagem */
 }
 
-/* ÁREA PRINCIPAL - SE ADAPTA A COMPUTADORES, TVS E CELULARES */
+/* ÁREA PRINCIPAL - EXPANDIDA PARA OCUPAR A TELA */
 main {
    text-align: center;
    width: 100%;
-   /* No PC/TV limita a largura para parecer um app de jogo. No celular puxa 100% */
-   max-width: 420px; 
-   height: 96vh; /* Ocupa quase toda a altura da tela deixando respiro nas bordas */
+   max-width: 900px; /* Aumentado para o jogo ficar bem largo em PCs e TVs */
+   height: 95vh; /* Ocupa a altura quase total de forma segura */
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
 
-/* ESTILO DO CARTÃO DO PASSO (ENQUADRAMENTO AUTOMÁTICO) */
+/* ESTILO DO CARTÃO (ENQUADRAMENTO AUTOMÁTICO) */
 .passo {
    display: none;
    flex-direction: column;
-   justify-content: space-between; /* Distribui imagem, texto e botões proporcionalmente */
+   justify-content: space-between; /* Distribui imagem, texto e botões perfeitamente */
    align-items: center;
    height: 100%; 
    padding: clamp(15px, 3vh, 25px);
@@ -60,12 +58,13 @@ main {
 #passo-11 { background: linear-gradient(135deg, #2d163d, #140a1b); } 
 #passo-12 { background: linear-gradient(135deg, #114724, #05170b); } 
 
-/* IMAGENS QUE ENCOLHEM OU CRESCEM SEM CORTAR */
+/* IMAGENS QUE CRESCEM NAS LATERAIS MAS RESPEITAM A ALTURA */
 img {
    width: 100%;
-   /* A imagem se ajusta dinamicamente pegando no máximo 35% da altura da tela do dispositivo */
-   max-height: 35vh; 
-   object-fit: cover; 
+   max-width: 100%;
+   /* Limita a altura da imagem em 40% da tela para garantir espaço para o texto e botões abaixo */
+   max-height: 40vh; 
+   object-fit: contain; /* Mudado para 'contain' para mostrar a imagem inteira sem cortes laterais */
    border-radius: 12px;
    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
    margin-bottom: 5px;
@@ -73,20 +72,19 @@ img {
 
 /* TEXTOS AUTO-AJUSTÁVEIS */
 p {
-   /* Diminui dinamicamente em telas minúsculas e estabiliza em telas grandes */
-   font-size: clamp(0.85rem, 2.2vh, 1.05rem); 
-   line-height: 1.4;
-   margin: 8px 0;
+   font-size: clamp(0.9rem, 2.2vh, 1.1rem); 
+   line-height: 1.5;
+   margin: 10px 0;
    text-align: center;
    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* CONTAINER PARA OS BOTÕES FICAREM SEMPRE ALINHADOS EMBAIXO */
+/* CONTAINER DOS BOTÕES */
 .botoes-container {
    width: 100%;
 }
 
-/* BOTÕES COMPACTOS E TOQUE FACILITADO */
+/* BOTÕES CONFORTÁVEIS QUE SE ADAPTAM */
 button {
    background-color: #64A712;
    color: white;
@@ -94,7 +92,7 @@ button {
    border: none;
    padding: clamp(10px, 1.8vh, 14px); 
    margin: 5px 0;
-   font-size: clamp(0.8rem, 1.8vh, 0.95rem);
+   font-size: clamp(0.85rem, 1.8vh, 1rem);
    font-weight: 700;
    border-radius: 8px;
    cursor: pointer;
@@ -105,5 +103,5 @@ button {
 
 button:hover {
    background-color: #528a0e;
-   transform: scale(1.02);
+   transform: scale(1.01);
 }
