@@ -11,14 +11,14 @@ body {
    margin: 0;
    padding: 15px;
    box-sizing: border-box;
-   overflow: hidden;
+   overflow: hidden; /* Evita barras de rolagem e tranca tudo na tela */
 }
 
-/* ÁREA PRINCIPAL DA NAVEGAÇÃO */
+/* ÁREA PRINCIPAL DA NAVEGAÇÃO - EXPANDIDA */
 main {
    text-align: center;
    width: 100%;
-   max-width: 900px; 
+   max-width: 900px; /* Jogo amplo nas laterais em PCs e TVs */
    height: 95vh; 
    display: flex;
    flex-direction: column;
@@ -29,7 +29,7 @@ main {
 .passo {
    display: none;
    flex-direction: column;
-   justify-content: space-between; 
+   justify-content: space-between; /* Distribui imagem, texto e botões proporcionalmente */
    align-items: center;
    height: 100%; 
    padding: clamp(15px, 3vh, 25px);
@@ -43,7 +43,7 @@ main {
    display: flex; 
 }
 
-/* 🎨 TEMAS VISUAIS DE CADA FASE */
+/* 🎨 PALETA DE CORES EXCLUSIVAS PARA CADA CENÁRIO */
 #passo-0 { background: linear-gradient(135deg, #1b3d1b, #0e1e0e); } 
 #passo-1 { background: linear-gradient(135deg, #1d242b, #101418); } 
 #passo-2 { background: linear-gradient(135deg, #0f3038, #061217); } 
@@ -58,12 +58,16 @@ main {
 #passo-11 { background: linear-gradient(135deg, #2d163d, #140a1b); } 
 #passo-12 { background: linear-gradient(135deg, #114724, #05170b); } 
 
-/* IMAGENS QUE COBREM AS LATERAIS DE FORMA INTEGRADA */
+/* CONFIGURAÇÃO DA IMAGEM TOTALMENTE ENQUADRADA */
 img {
    width: 100%;
    max-width: 100%;
-   max-height: 40vh; 
-   object-fit: cover; /* Faz a foto preencher todo o espaço horizontal da caixa */
+   max-height: 40vh; /* Garante que sobre espaço para o texto e botões */
+   
+   /* Ajustes aplicados para preencher as laterais sem cortar rostos */
+   object-fit: cover; 
+   object-position: center 20%; 
+   
    border-radius: 12px;
    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
    margin-bottom: 5px;
@@ -78,12 +82,12 @@ p {
    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* ALINHAMENTO DO BLOCO DE ESCOLHAS */
+/* CONTAINER DOS BOTÕES */
 .botoes-container {
    width: 100%;
 }
 
-/* ELEMENTO DE INTERAÇÃO (BOTÃO) */
+/* BOTÕES AJUSTÁVEIS */
 button {
    background-color: #64A712;
    color: white;
