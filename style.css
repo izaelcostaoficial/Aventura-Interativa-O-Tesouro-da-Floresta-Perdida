@@ -11,25 +11,25 @@ body {
    margin: 0;
    padding: 15px;
    box-sizing: border-box;
-   overflow: hidden; /* Força tudo a ficar preso na tela, sem criar barras de rolagem */
+   overflow: hidden;
 }
 
-/* ÁREA PRINCIPAL - EXPANDIDA PARA OCUPAR A TELA */
+/* ÁREA PRINCIPAL DA NAVEGAÇÃO */
 main {
    text-align: center;
    width: 100%;
-   max-width: 900px; /* Aumentado para o jogo ficar bem largo em PCs e TVs */
-   height: 95vh; /* Ocupa a altura quase total de forma segura */
+   max-width: 900px; 
+   height: 95vh; 
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
 
-/* ESTILO DO CARTÃO (ENQUADRAMENTO AUTOMÁTICO) */
+/* CONTEÚDO DINÂMICO E SEU ENQUADRAMENTO */
 .passo {
    display: none;
    flex-direction: column;
-   justify-content: space-between; /* Distribui imagem, texto e botões perfeitamente */
+   justify-content: space-between; 
    align-items: center;
    height: 100%; 
    padding: clamp(15px, 3vh, 25px);
@@ -43,7 +43,7 @@ main {
    display: flex; 
 }
 
-/* 🎨 PALETA DE CORES PARA CADA CENÁRIO */
+/* 🎨 TEMAS VISUAIS DE CADA FASE */
 #passo-0 { background: linear-gradient(135deg, #1b3d1b, #0e1e0e); } 
 #passo-1 { background: linear-gradient(135deg, #1d242b, #101418); } 
 #passo-2 { background: linear-gradient(135deg, #0f3038, #061217); } 
@@ -58,19 +58,18 @@ main {
 #passo-11 { background: linear-gradient(135deg, #2d163d, #140a1b); } 
 #passo-12 { background: linear-gradient(135deg, #114724, #05170b); } 
 
-/* IMAGENS QUE CRESCEM NAS LATERAIS MAS RESPEITAM A ALTURA */
+/* IMAGENS QUE COBREM AS LATERAIS DE FORMA INTEGRADA */
 img {
    width: 100%;
    max-width: 100%;
-   /* Limita a altura da imagem em 40% da tela para garantir espaço para o texto e botões abaixo */
    max-height: 40vh; 
-   object-fit: contain; /* Mudado para 'contain' para mostrar a imagem inteira sem cortes laterais */
+   object-fit: cover; /* Faz a foto preencher todo o espaço horizontal da caixa */
    border-radius: 12px;
    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
    margin-bottom: 5px;
 }
 
-/* TEXTOS AUTO-AJUSTÁVEIS */
+/* LEITURA DE TEXTOS AUTO-AJUSTADOS */
 p {
    font-size: clamp(0.9rem, 2.2vh, 1.1rem); 
    line-height: 1.5;
@@ -79,12 +78,12 @@ p {
    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* CONTAINER DOS BOTÕES */
+/* ALINHAMENTO DO BLOCO DE ESCOLHAS */
 .botoes-container {
    width: 100%;
 }
 
-/* BOTÕES CONFORTÁVEIS QUE SE ADAPTAM */
+/* ELEMENTO DE INTERAÇÃO (BOTÃO) */
 button {
    background-color: #64A712;
    color: white;
@@ -105,3 +104,4 @@ button:hover {
    background-color: #528a0e;
    transform: scale(1.01);
 }
+
